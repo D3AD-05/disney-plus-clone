@@ -5,14 +5,14 @@ import {getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import { getFirestore } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBOK7x5N5UnjY4TDqndzH7l5tvdNIsWFRc",
-  authDomain: "todo-app-e3cf0.firebaseapp.com",
-  projectId: "todo-app-e3cf0",
-  storageBucket: "todo-app-e3cf0.appspot.com",
-  messagingSenderId: "940016886081",
-  appId: "1:940016886081:web:91686613f16b1b1f8001c0",
-  measurementId: "G-JHPC7TP12K"
-};
+    apiKey: "AIzaSyDMKUnBTbG0xuh80nSYrPnOdNjbnG1HRnk",
+    authDomain: "disney-ec010.firebaseapp.com",
+    projectId: "disney-ec010",
+    storageBucket: "disney-ec010.appspot.com",
+    messagingSenderId: "1047721691333",
+    appId: "1:1047721691333:web:5e3b32cf53f970e50b88ac",
+    measurementId: "G-KV9LMW1LB6"
+  };
 
 const firebaseApp = initializeApp(firebaseConfig);
 export const auth = getAuth(firebaseApp);
@@ -20,13 +20,26 @@ const db = getFirestore(firebaseApp);
 const provider = new GoogleAuthProvider()
 
 export const siginWithGoogle = ()=>{
-    signInWithPopup(auth,provider).then((result)=>{
-        console.log(result);
-    }).catch((error)=>{
-        alert(error.message);
-    })
+    
+        signInWithPopup(auth,provider).then((result)=>{
+        
+            const dp =result.user.photoURL;
+           const name =result.user.displayName;
 
-}
+    console.log(name);
+
+    
+            localStorage.setItem("profilePic",dp);
+            localStorage.setItem("name",name);
+            console.log(name);
+        }).catch((error)=>{
+            console.log(error);
+    
+        })
+    
+    }
+   
+
 
 
 export default db;

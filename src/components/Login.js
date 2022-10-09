@@ -5,7 +5,7 @@ function Login() {
   return (
     <Container>
       <Content>
-      <BgImage />
+      <BgImage/>
         <LogoWraper>
           <Logo src='images/cta-logo-one.svg' ></Logo>
            <SiginUp>Get All Here</SiginUp>
@@ -14,7 +14,6 @@ function Login() {
            </Description>
           <LogoTwo src='images/cta-logo-two.png'/>
         </LogoWraper>
-                
       </Content>
     </Container>
   )
@@ -53,7 +52,7 @@ const BgImage = styled.div`
   top: 0;
   right: 0;
   left: 0;
-  z-index:1;  
+  // z-index:-1;  
   `;
 
 const LogoWraper = styled.div`
@@ -61,7 +60,7 @@ const LogoWraper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  z-index:2;
+  z-index:1;
 `;
 
 const Logo = styled.img`
