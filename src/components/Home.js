@@ -2,6 +2,8 @@ import React from 'react'
 import styled from "styled-components"
 import Chanels from './chanels';
 import ImgSlider from './ImageSlider';
+import Recom from './Recom';
+
 
 
 
@@ -13,6 +15,7 @@ function Home() {
 
         <ImgSlider></ImgSlider> 
         <Chanels></Chanels>
+        <Recom></Recom>
 
 
       </Container>
